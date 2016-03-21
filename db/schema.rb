@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113011820) do
+ActiveRecord::Schema.define(version: 20160321191359) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 20160113011820) do
     t.datetime "updated_at",  null: false
     t.boolean  "post_status"
     t.integer  "author_id"
+  end
+
+  create_table "stats", force: :cascade do |t|
   end
 
 end
