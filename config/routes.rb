@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    resources :stats, only: [:index]
+  end
+  
   resources :authors, only: [:show, :index] do
     resources :posts, only: [:show, :index, :new, :edit]
   end
@@ -7,4 +11,6 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show, :new, :create, :edit, :update]
 
   root 'posts#index'
+
+
 end
