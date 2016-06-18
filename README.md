@@ -132,3 +132,4 @@ If we reload `/admin/stats`, everything still works, but we've simplified the de
 We learned how to organize our URLs by using `scope` to group them with an `/admin` prefix, and to further organize our controllers using directories and modules and `scope module` or `namespace` in our routes.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/namespaced-routes-reading'>Namespaced Routes </a> on Learn.co and start learning to code for free.</p>
+###
