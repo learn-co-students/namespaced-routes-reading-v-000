@@ -6,5 +6,12 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:index, :show, :new, :create, :edit, :update]
 
+
+  get 'admin/status', to: 'status#index'
+
+  scope '/admin', module: 'admin' do
+  resources :stats, only: [:index]
+end
+
   root 'posts#index'
 end
