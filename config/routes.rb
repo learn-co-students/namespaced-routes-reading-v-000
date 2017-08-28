@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: [:index, :show, :new, :create, :edit, :update]
-
   root 'posts#index'
+
+  namespace :admin do
+  resources :stats, only: [:index]
+ end
 end
