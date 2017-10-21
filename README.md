@@ -11,7 +11,7 @@ We're going to explore different ways of routing things in our blog application 
 
 ### Blog Stats
 
-We decide that we want to keep track of some basic blog statistics, such as how many posts and authors we have. We start by creating a `stats_controller.rb` with an `index` action and corresponding view.
+We decide that we want to keep track of some basic blog statistics, such as how many posts and authors we have. We start by creating a `stats_controller.rbsd` with an `index` action and corresponding view.
 
 We can't actually browse to it yet because we need to set up a route. Let's add it to `routes.rb`:
 
