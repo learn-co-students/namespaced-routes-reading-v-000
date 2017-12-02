@@ -4470,3 +4470,59 @@ ActionController::RoutingError (No route matches [GET] "/stats"):
   Rendered /Users/scottcreynolds/.rvm/gems/ruby-2.1.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
   Rendered /Users/scottcreynolds/.rvm/gems/ruby-2.1.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/scottcreynolds/.rvm/gems/ruby-2.1.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.6ms)
+
+
+Started GET "/admin/stats" for ::1 at 2017-12-02 17:41:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StatsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1
+  Rendered stats/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 535ms (Views: 500.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-12-02 17:41:54 -0500
+
+
+Started GET "/admin/stats" for ::1 at 2017-12-02 17:47:14 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::StatsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1
+  Rendered admin/stats/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 231ms (Views: 195.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/stats" for ::1 at 2017-12-02 17:48:23 -0500
+
+SyntaxError (/Users/robinpahlman/Development/code/namespaced-routes-reading-v-000/config/routes.rb:11: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+  namespace :admin' do 
+                   ^
+/Users/robinpahlman/Development/code/namespaced-routes-reading-v-000/config/routes.rb:11: unterminated string meets end of file):
+  config/routes.rb:11: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+  config/routes.rb:11: unterminated string meets end of file
+
+
+  Rendered /Users/robinpahlman/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/robinpahlman/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/robinpahlman/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/robinpahlman/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.6ms)
+  Rendered /Users/robinpahlman/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/robinpahlman/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/robinpahlman/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/robinpahlman/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/robinpahlman/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (75.5ms)
+  Rendered /Users/robinpahlman/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.3ms)
+  Rendered /Users/robinpahlman/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/robinpahlman/.rvm/gems/ruby-2.3.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (183.4ms)
+
+
+Started GET "/admin/stats" for ::1 at 2017-12-02 17:48:39 -0500
+Processing by Admin::StatsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1[0m
+  Rendered admin/stats/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 48ms (Views: 28.8ms | ActiveRecord: 1.9ms)
