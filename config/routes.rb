@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-
-  resources :authors, only: [:show, :index] do
-    resources :posts, only: [:show, :index, :new, :edit]
+  resources :authors, only: %i[show index] do
+    resources :posts, only: %i[show index new edit]
   end
 
-  resources :posts, only: [:index, :show, :new, :create, :edit, :update]
+  resources :posts, only: %i[index show new create edit update]
+
+  namespace :admin do
+    resources :stats, only: %i[index]
+  end
 
   root 'posts#index'
 end
