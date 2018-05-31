@@ -8,9 +8,19 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  scope '/admin' do
+  namespace :admin do
     resources :stats, only: [:index]
   end
+  #gives us admin_stats_path helper
+
+  # scope '/admin', module: 'admin' do
+  #   resources :stats, only: [:index]
+  # end
+  # gives us stats_path URL helper
+  #
+  # scope '/admin' do
+  #   resources :stats, only: [:index]
+  # end
 # get '/admin/stats', to: 'stats#index'
 # get '/admin/authors/new', to: 'authors#new'
 # get '/admin/authors/delete', to: 'authors#delete'
