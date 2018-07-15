@@ -63,6 +63,7 @@ scope '/admin' do
 end
 ```
 
+
 Now we can reload `/admin/stats`, and it still works. Notice our new route is resourced. Now that we don't have to manually prefix `/admin`, we can go back to using resourced routes within the `/admin` scope.
 
 If you run `rake routes`, you'll see that the new `/admin/stats` helpers are `stats_path` and `stats_url`.
