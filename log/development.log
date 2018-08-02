@@ -4509,3 +4509,14 @@ Cannot render console from 67.244.19.121! Allowed networks: 127.0.0.1, ::1, 127.
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 67.244.19.121 at 2018-08-02 15:10:12 +0000
 Cannot render console from 67.244.19.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/admin/stats" for 67.244.19.121 at 2018-08-02 15:12:39 +0000
+Cannot render console from 67.244.19.121! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::StatsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1
+  Rendered admin/stats/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 221ms (Views: 195.2ms | ActiveRecord: 0.8ms)
