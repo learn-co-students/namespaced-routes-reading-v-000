@@ -1,3 +1,4 @@
+
 class StatsController < ApplicationController
 
   def index
@@ -5,4 +6,5 @@ class StatsController < ApplicationController
     @authors_count = Author.count
     @last_post = Post.last
   end
+  
 end
