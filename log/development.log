@@ -4470,3 +4470,50 @@ ActionController::RoutingError (No route matches [GET] "/stats"):
   Rendered /Users/scottcreynolds/.rvm/gems/ruby-2.1.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
   Rendered /Users/scottcreynolds/.rvm/gems/ruby-2.1.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
   Rendered /Users/scottcreynolds/.rvm/gems/ruby-2.1.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (34.6ms)
+
+
+Started GET "/admin/stats" for ::1 at 2018-11-15 14:52:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StatsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1
+  Rendered stats/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 1102ms (Views: 1059.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/stats" for ::1 at 2018-11-15 14:53:11 -0500
+Processing by StatsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1[0m
+  Rendered stats/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 37ms (Views: 22.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/stats" for ::1 at 2018-11-15 14:53:17 -0500
+Processing by StatsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mPost Load (0.9ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1
+  Rendered stats/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 25.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/stats" for ::1 at 2018-11-15 15:01:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::StatsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1
+  Rendered admin/stats/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 318ms (Views: 286.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/stats" for ::1 at 2018-11-15 15:02:40 -0500
+Processing by Admin::StatsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1[0m
+  Rendered admin/stats/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 36ms (Views: 21.5ms | ActiveRecord: 1.3ms)
