@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: %i[index show new create edit update]
-
-  get '/admin/stats', to: 'stats#index'
+  namespace :admin do
+  #the above is the same as the below but allows for a route with a module that uses the module's name 
+  #scope '/admin', module: 'admin' do
+    resources :stats, only: [:index]
+  end
 
   root 'posts#index'
 end
