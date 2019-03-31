@@ -1,1 +1,2 @@
-[] try gem update to fix sql gem issue
+[x] try gem update to fix sql gem issue
+[] get support re ```Specified 'sqlite3' for database adapter, but the gem is not loaded. Add `gem 'sqlite3'` to your Gemfile (and ensure its version is at the minimum required by ActiveRecord).``` when I run rails s
