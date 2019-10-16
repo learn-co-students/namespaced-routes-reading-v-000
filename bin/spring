@@ -8,7 +8,15 @@ unless defined?(Spring)
   require 'bundler'
 
   if (match = Bundler.default_lockfile.read.match(/^GEM$.*?^    (?:  )*spring \((.*?)\)$.*?^$/m))
-    Gem.paths = { 'GEM_PATH' => [Bundler.bundle_path.to_s, *Gem.path].uniq }
+
+    # Cannot run "rails c" and trying to fix it with this solution here:
+    # https://github.com/rubygems/rubygems/issues/1551
+    # I got the same error message on running "rails s" but it still booted up
+    # the server regardless
+    # Gem.paths = { 'GEM_PATH' => [Bundler.bundle_path.to_s, *Gem.path].uniq }
+    Gem.paths = { 'GEM_PATH' => [Bundler.bundle_path.to_s, *Gem.path].uniq.join(File::PATH_SEPARATOR) }
+    # with this change, the error messages have gone away
+
     gem 'spring', match[1]
     require 'spring/binstub'
   end
