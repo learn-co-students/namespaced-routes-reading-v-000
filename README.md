@@ -2,6 +2,7 @@
 
 ## Objectives
 
+
 1. Understand the use of `scope` and `namespace` in `routes.rb`.
 2. Create a module scoped controller.
 
