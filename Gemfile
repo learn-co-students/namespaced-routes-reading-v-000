@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+# 1 Delete gemfile.lock ifit is present (if not, do not worry)
+# 2. Place this in  gemfile: gem 'bundler', '~> 1.16', '>= 1.16.1'
+# 3 from the command line run this: gem install bundler -v 1.16.1
+# 4 from the command line run this: bundle _1.16.1_ install
+# 5 now learn commands should work
+gem 'bundler', '~> 1.16', '>= 1.16.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0'
