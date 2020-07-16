@@ -7,5 +7,17 @@ Rails.application.routes.draw do
 
   get '/admin/stats', to: 'stats#index'
 
+
+
+  # get '/admin/stats', to: 'stats#index'
+  # get '/admin/authors/new', to: 'authors#new'
+  # get '/admin/authors/delete', to: 'authors#delete'
+  # get '/admin/authors/create', to: 'atuhors#create'
+  # get '/admin/comments/moderate', to: 'comments#moderate'
+
+  namespace :admin do
+    resources :stats, only: [:index]
+  end
+
   root 'posts#index'
 end
