@@ -22,12 +22,6 @@ We can't actually browse to it yet because we need to set up a route. Let's add 
 # config/routes.rb
 
 get '/stats', to: 'stats#index'
-```
-
-Easy enough, but, after thinking about it, `/stats` isn't something we want to
-just hang off the root of our blog URL for anyone to see. It's really just for
-blog admins, and we want to set up a URL scheme to segregate admin things into
-their own logical space.
 
 We modify our route:
 
