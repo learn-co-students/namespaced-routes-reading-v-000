@@ -7,5 +7,13 @@ Rails.application.routes.draw do
 
   get '/admin/stats', to: 'stats#index'
 
+  # scope '/admin', module: 'admin' do
+  # NOTE : Replace "scope/module" with "namespace" when using both of the same
+    # If moving from "scope" to "namespace" -> Need to remember to update all URL helpers
+  namespace :admin do
+    resources :stats, only: [:index]
+  end
+
+
   root 'posts#index'
 end
