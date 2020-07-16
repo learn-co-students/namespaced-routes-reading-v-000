@@ -700,3 +700,261 @@ Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE (created_at <'2016-01-31 00:00:00.000000')[0m
   [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.5ms)[0m  DELETE FROM "authors";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'authors';
+  [1m[36m (2.2ms)[0m  [1mDELETE FROM "posts";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'posts';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Stephen King"], ["created_at", "2018-03-01 17:43:02.879095"], ["updated_at", "2018-03-01 17:43:02.879095"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Scary Test"], ["description", "More Tests"], ["author_id", 1], ["created_at", "2018-03-01 17:43:02.904527"], ["updated_at", "2018-03-01 17:43:02.904527"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Tom Jerry"], ["created_at", "2018-03-01 17:43:02.907529"], ["updated_at", "2018-03-01 17:43:02.907529"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Chasing Mice"], ["description", "Doesn't Work"], ["author_id", 2], ["created_at", "2018-03-01 17:43:02.910256"], ["updated_at", "2018-03-01 17:43:02.910256"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["created_at", "2018-02-28 00:00:00.000000"], ["updated_at", "2018-03-01 17:43:02.912648"], ["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."author_id" = 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."author_id" = 1  ORDER BY "posts"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Stephen King"], ["created_at", "2018-03-01 17:43:02.928487"], ["updated_at", "2018-03-01 17:43:02.928487"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Scary Test"], ["description", "More Tests"], ["author_id", 1], ["created_at", "2018-03-01 17:43:02.931857"], ["updated_at", "2018-03-01 17:43:02.931857"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tom Jerry"], ["created_at", "2018-03-01 17:43:02.934460"], ["updated_at", "2018-03-01 17:43:02.934460"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chasing Mice"], ["description", "Doesn't Work"], ["author_id", 2], ["created_at", "2018-03-01 17:43:02.936695"], ["updated_at", "2018-03-01 17:43:02.936695"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["created_at", "2018-02-28 00:00:00.000000"], ["updated_at", "2018-03-01 17:43:02.938604"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE (created_at >='2018-03-01 00:00:00.000000')[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Stephen King"], ["created_at", "2018-03-01 17:43:02.944174"], ["updated_at", "2018-03-01 17:43:02.944174"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Scary Test"], ["description", "More Tests"], ["author_id", 1], ["created_at", "2018-03-01 17:43:02.946723"], ["updated_at", "2018-03-01 17:43:02.946723"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tom Jerry"], ["created_at", "2018-03-01 17:43:02.948852"], ["updated_at", "2018-03-01 17:43:02.948852"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chasing Mice"], ["description", "Doesn't Work"], ["author_id", 2], ["created_at", "2018-03-01 17:43:02.951544"], ["updated_at", "2018-03-01 17:43:02.951544"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["created_at", "2018-02-28 00:00:00.000000"], ["updated_at", "2018-03-01 17:43:02.953484"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE (created_at <'2018-03-01 00:00:00.000000')[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.8ms)[0m  DELETE FROM "authors";
+  [1m[36m (0.8ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'authors';
+  [1m[36m (2.3ms)[0m  [1mDELETE FROM "posts";[0m
+  [1m[35m (0.5ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'posts';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAuthor Load (0.4ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Stephen King"], ["created_at", "2018-03-01 17:49:36.693362"], ["updated_at", "2018-03-01 17:49:36.693362"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Scary Test"], ["description", "More Tests"], ["author_id", 1], ["created_at", "2018-03-01 17:49:36.718903"], ["updated_at", "2018-03-01 17:49:36.718903"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Tom Jerry"], ["created_at", "2018-03-01 17:49:36.721303"], ["updated_at", "2018-03-01 17:49:36.721303"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Chasing Mice"], ["description", "Doesn't Work"], ["author_id", 2], ["created_at", "2018-03-01 17:49:36.723267"], ["updated_at", "2018-03-01 17:49:36.723267"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["created_at", "2018-02-28 00:00:00.000000"], ["updated_at", "2018-03-01 17:49:36.725000"], ["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."author_id" = 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."author_id" = 1  ORDER BY "posts"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Stephen King"], ["created_at", "2018-03-01 17:49:36.741743"], ["updated_at", "2018-03-01 17:49:36.741743"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Scary Test"], ["description", "More Tests"], ["author_id", 1], ["created_at", "2018-03-01 17:49:36.744904"], ["updated_at", "2018-03-01 17:49:36.744904"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tom Jerry"], ["created_at", "2018-03-01 17:49:36.746703"], ["updated_at", "2018-03-01 17:49:36.746703"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chasing Mice"], ["description", "Doesn't Work"], ["author_id", 2], ["created_at", "2018-03-01 17:49:36.749975"], ["updated_at", "2018-03-01 17:49:36.749975"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["created_at", "2018-02-28 00:00:00.000000"], ["updated_at", "2018-03-01 17:49:36.752696"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE (created_at >='2018-03-01 00:00:00.000000')[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Stephen King"], ["created_at", "2018-03-01 17:49:36.757922"], ["updated_at", "2018-03-01 17:49:36.757922"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Scary Test"], ["description", "More Tests"], ["author_id", 1], ["created_at", "2018-03-01 17:49:36.760647"], ["updated_at", "2018-03-01 17:49:36.760647"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tom Jerry"], ["created_at", "2018-03-01 17:49:36.762621"], ["updated_at", "2018-03-01 17:49:36.762621"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chasing Mice"], ["description", "Doesn't Work"], ["author_id", 2], ["created_at", "2018-03-01 17:49:36.765136"], ["updated_at", "2018-03-01 17:49:36.765136"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["created_at", "2018-02-28 00:00:00.000000"], ["updated_at", "2018-03-01 17:49:36.767471"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE (created_at <'2018-03-01 00:00:00.000000')[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.4ms)[0m  DELETE FROM "authors";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'authors';
+  [1m[36m (1.9ms)[0m  [1mDELETE FROM "posts";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'posts';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Stephen King"], ["created_at", "2018-03-01 17:53:34.354776"], ["updated_at", "2018-03-01 17:53:34.354776"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Scary Test"], ["description", "More Tests"], ["author_id", 1], ["created_at", "2018-03-01 17:53:34.372424"], ["updated_at", "2018-03-01 17:53:34.372424"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Tom Jerry"], ["created_at", "2018-03-01 17:53:34.374499"], ["updated_at", "2018-03-01 17:53:34.374499"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Chasing Mice"], ["description", "Doesn't Work"], ["author_id", 2], ["created_at", "2018-03-01 17:53:34.376271"], ["updated_at", "2018-03-01 17:53:34.376271"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["created_at", "2018-02-28 00:00:00.000000"], ["updated_at", "2018-03-01 17:53:34.377944"], ["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posts" WHERE "posts"."author_id" = 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."author_id" = 1  ORDER BY "posts"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Stephen King"], ["created_at", "2018-03-01 17:53:34.392541"], ["updated_at", "2018-03-01 17:53:34.392541"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Scary Test"], ["description", "More Tests"], ["author_id", 1], ["created_at", "2018-03-01 17:53:34.395295"], ["updated_at", "2018-03-01 17:53:34.395295"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tom Jerry"], ["created_at", "2018-03-01 17:53:34.397025"], ["updated_at", "2018-03-01 17:53:34.397025"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chasing Mice"], ["description", "Doesn't Work"], ["author_id", 2], ["created_at", "2018-03-01 17:53:34.398965"], ["updated_at", "2018-03-01 17:53:34.398965"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["created_at", "2018-02-28 00:00:00.000000"], ["updated_at", "2018-03-01 17:53:34.400574"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE (created_at >='2018-03-01 00:00:00.000000')[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Stephen King"], ["created_at", "2018-03-01 17:53:34.405320"], ["updated_at", "2018-03-01 17:53:34.405320"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Scary Test"], ["description", "More Tests"], ["author_id", 1], ["created_at", "2018-03-01 17:53:34.407554"], ["updated_at", "2018-03-01 17:53:34.407554"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tom Jerry"], ["created_at", "2018-03-01 17:53:34.409373"], ["updated_at", "2018-03-01 17:53:34.409373"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Chasing Mice"], ["description", "Doesn't Work"], ["author_id", 2], ["created_at", "2018-03-01 17:53:34.411185"], ["updated_at", "2018-03-01 17:53:34.411185"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["created_at", "2018-02-28 00:00:00.000000"], ["updated_at", "2018-03-01 17:53:34.412749"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts" WHERE (created_at <'2018-03-01 00:00:00.000000')[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
