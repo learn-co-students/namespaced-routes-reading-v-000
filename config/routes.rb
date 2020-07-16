@@ -7,5 +7,11 @@ Rails.application.routes.draw do
 
   get '/admin/stats', to: 'stats#index'
 
+
+  #telling our route that the controllers are in the admin module
+  namespace :admin do
+    resources :stats, only: [:index]
+  end
+
   root 'posts#index'
 end
