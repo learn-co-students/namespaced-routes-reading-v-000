@@ -1,5 +1,6 @@
 # Namespaced Routes
 
+
 ## Objectives
 
 1. Understand the use of `scope` and `namespace` in `routes.rb`.
