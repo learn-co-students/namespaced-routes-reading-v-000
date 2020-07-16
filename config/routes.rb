@@ -7,5 +7,15 @@ Rails.application.routes.draw do
 
   get '/admin/stats', to: 'stats#index'
 
+  namespace :admin do
+    resources :stats, only: [:index]
+  end
+
+  # scope '/admin', module: 'admin' do
+  #   resources :stats, only: [:index]
+  # end
+
+  # get '/admin/stats', to: 'stats#index'
+
   root 'posts#index'
 end
