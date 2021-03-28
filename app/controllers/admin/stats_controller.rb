@@ -1,4 +1,4 @@
-class StatsController < ApplicationController
+class Admin::StatsController < ApplicationController #Admin is a module for Rails
 
   def index
     @post_count = Post.count
